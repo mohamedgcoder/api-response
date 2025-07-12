@@ -1,0 +1,21 @@
+{
+  "name": "mohamedahmed/api-response",
+  "description": "Reusable trait for standardized API responses",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "MohamedAhmed\\ApiResponse\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=8.0",
+    "illuminate/support": "^8.0|^9.0|^10.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "MohamedAhmed\\ApiResponse\\ApiResponseServiceProvider"
+      ]
+    }
+  }
+}
