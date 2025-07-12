@@ -2,7 +2,7 @@
 
 ## Package info
 
-**URL**: mohamedgcoder/response-api 
+**URL**: https://packagist.org/packages/mohamedahmed/api-response
 
 ## How can install this Package?
 
@@ -11,11 +11,11 @@ There are several ways of using this Package.
 
 ```sh
 
-composer require mohamedgcoder/response-api
+composer require mohamedahmed/api-response
 
 ```
 
-**How to use**
+**How to use in code**
 
 ```sh
 use MohamedAhmed\ApiResponse\Traits\ResponseApi;
