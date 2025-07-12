@@ -43,6 +43,7 @@ class SomeController extends Controller
 **setData($data)**
 
 Sets the main response data.
+
 If data is paginated, pagination details are auto-included.
 
 ```sh
@@ -51,11 +52,6 @@ $this->setData(User::all());
 $this->setData(User::paginate(10));
 
 ```
-
-**setPagination()**
-
-Called automatically by setData() if paginated.
-Extracts pagination info like path, total, currentPage, etc.
 
 **setException(Throwable $exception)**
 
