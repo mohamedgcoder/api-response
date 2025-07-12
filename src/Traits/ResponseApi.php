@@ -4,6 +4,9 @@ namespace MohamedAhmed\ApiResponse\Traits;
 
 trait ResponseApi
 {
+    // use ResponseAccessors to set and get data
+    use ResponseAccessors;
+
     private $data;
     private $pagination;
     private int $ec = 0;
@@ -11,82 +14,6 @@ trait ResponseApi
     private string $status;
     private $exception;
     private $messages;
-
-
-    public function setData($data): void
-    {
-        $this->data = $data;
-        $this->setPagination();
-    }
-
-    public function setPagination(): void
-    {
-        $data = $this->data();
-
-        try {
-            $paginationData = [
-                'path' => $data->path(),
-                'total' => $data->total(),
-                'perPage' => $data->perPage(),
-                'currentPage' => $data->currentPage(),
-                'lastPage' => $data->lastPage(),
-            ];
-        } catch (\Throwable $th) {
-            // throw $th;
-            $paginationData = [];
-        }
-
-        $this->pagination = $paginationData;
-    }
-
-    public function setException($exception)
-    {
-        $this->exception = $exception;
-    }
-
-    public function setEc($ec)
-    {
-        $this->ec = $ec;
-    }
-
-    public function setMessages($messages)
-    {
-        $this->messages = $messages;
-    }
-
-    public function setCode($code)
-    {
-        $this->code = $code;
-    }
-
-    public function data()
-    {
-        return $this->data;
-    }
-
-    public function pagination()
-    {
-        return $this->pagination;
-    }
-
-    public function exception()
-    {
-        return $this->exception;
-    }
-
-    public function ec()
-    {
-        return $this->ec;
-    }
-
-    public function messages()
-    {
-        return $this->messages;
-    }
-    public function code()
-    {
-        return $this->code;
-    }
 
     public function apiResponse()
     {
