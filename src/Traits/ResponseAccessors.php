@@ -30,22 +30,22 @@ trait ResponseAccessors
         $this->pagination = $paginationData;
     }
 
-    public function setException($exception)
+    public function setException($exception): void
     {
         $this->exception = $exception;
     }
 
-    public function setEc($ec)
+    public function setEc(int $ec): void
     {
         $this->ec = $ec;
     }
 
-    public function setMessages($messages)
+    public function setMessages(array $messages): void
     {
         $this->messages = $messages;
     }
 
-    public function setCode($code)
+    public function setCode(int $code): void
     {
         $this->code = $code;
     }
@@ -65,7 +65,7 @@ trait ResponseAccessors
         return $this->exception;
     }
 
-    protected function ec()
+    protected function ec(): int
     {
         return $this->ec;
     }
@@ -74,7 +74,7 @@ trait ResponseAccessors
     {
         return $this->messages;
     }
-    protected function code()
+    protected function code(): int
     {
         return $this->code;
     }

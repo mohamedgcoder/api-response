@@ -1,14 +1,29 @@
 {
-  "name": "mohamedahmed/api-response",
-  "description": "Reusable trait for standardized API responses",
-  "type": "library",
-  "license": "MIT",
-  "autoload": {
-    "psr-4": {
-      "MohamedAhmed\\ApiResponse\\": "src/"
+    "name": "mohamed-ahmed/api-response",
+    "description": "Reusable trait for standardized API responses",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamed Ahmed",
+            "email": "mohamedgcoder@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MohamedAhmed\\ApiResponse\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0 || ^11.0 || ^12.0"
+    },
+    "version": "1.0.0",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MohamedAhmed\\ApiResponse\\ApiResponseServiceProvider"
+            ]
+        }
     }
-  },
-  "require": {
-    "php": ">=8.0"
-  }
 }
