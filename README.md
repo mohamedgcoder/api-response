@@ -47,10 +47,7 @@ class SomeController extends Controller
     }
 }
 
-```
-
 ### v2.0.0
-```sh
 
 $res = Response::make();
 
@@ -70,15 +67,9 @@ If data is paginated, pagination details are auto-included.
 $this->setData(User::all());
 $this->setData(User::paginate(10));
 
-```
-
 ### v2.0.0
-```sh
 
-// return data
 $res->data($items->items());
-
-// return pagination data
 $res->paginate($items);
 
 ```
@@ -97,10 +88,7 @@ try {
     return $this->apiResponse();
 }
 
-```
-
 ### v2.0.0
-```sh
 
 $res->exception($e);
 return $this->tojson();
@@ -125,6 +113,12 @@ Custom messages for the user.
 
 $this->setMessages(['Created successfully']);
 
+### v2.0.0
+
+$res->nessages(['Created successfully']); // for alerts and errors also
+$res->add('additional message);
+$res->merge('[more of messages]);
+
 ```
 
 **setCode(int $httpCode)**
@@ -135,6 +129,9 @@ Sets HTTP status code (defaults to 200).
 
 $this->setCode(201); // HTTP Created
 
+### v2.0.0
+$res->code(201);
+
 ```
 
 **apiResponse()**
@@ -144,6 +141,9 @@ Builds and returns the full JSON response.
 ```sh
 
 return $this->apiResponse();
+
+### v2.0.0
+return $res->tojson();
 
 ```
 
