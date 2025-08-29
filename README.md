@@ -19,6 +19,17 @@ composer require mohamedahmed/api-response
 
 ## 🚀 Usage
 
+## Changelog
+
+### v2.0.0
+- Added `DataTrait` for handling response data.
+- Added `PaginationTrait` with support for Laravel pagination.
+- Enabled method chaining: `->paginate($paginator)`
+- Enabled method chaining: `->messages([...])->add($message)->merge([messages])`
+- Enabled method chaining: `->errors([...])->add($serror)->merge([errors])`
+- Enabled method chaining: `->alerts([...])->add($alert)->merge([alerts])`
+
+
 **In your Laravel controller:**
 
 ```sh
@@ -38,6 +49,14 @@ class SomeController extends Controller
 
 ```
 
+### v2.0.0
+```sh
+
+$res = Response::make();
+
+```
+
+
 ## 🧠 Available Methods
 
 **setData($data)**
@@ -50,6 +69,17 @@ If data is paginated, pagination details are auto-included.
 
 $this->setData(User::all());
 $this->setData(User::paginate(10));
+
+```
+
+### v2.0.0
+```sh
+
+// return data
+$res->data($items->items());
+
+// return pagination data
+$res->paginate($items);
 
 ```
 
@@ -66,6 +96,14 @@ try {
     $this->setCode(500);
     return $this->apiResponse();
 }
+
+```
+
+### v2.0.0
+```sh
+
+$res->exception($e);
+return $this->tojson();
 
 ```
 
